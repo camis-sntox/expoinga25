@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="logo"></div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Informações</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-height">
+            <div> </div>
+            <div class="hero-content">
+                <h1>Bem-vindo à UEM!</h1>
+                <a href="#about" class="cta-button">Saiba mais</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>Informações</h2>
+                <div class="aboutabout-content">
+                        <div class="circle-frame"></div>
+                    </div>
+                    <div class="about-texts">
+                        <p class="bio-text">A Universidade Estadual de Maringá tem como missão formar profissionais competentes, éticos e inovadores, capazes de transformar a sociedade através do conhecimento, da pesquisa e da extensão universitária. Nosso compromisso é oferecer educação de excelência, acessível e alinhada com as demandas do mercado contemporâneo.</p>
+                    </div>
+                    <div class="skills-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projetos da Universidade</h2>
+                <div class="projects-grid"></div>
+                <main class="container">
+                    <section id="engenharia">
+                        <h2>Engenharia de Software</h2>
+                        <div class="projects-grid">
+                            <article class="project-card">
+                                <div class="project-content">
+                                    <h3 class="project-title">Sistema de Energia Solar Residencial</h3>
+                                    <p class="project-course">Engenharia de Software- 2025</p>
+                                    <p class="project-description">Projeto de sistema de energia solar fotovoltaica para residências de baixo consumo.</p>
+                                </div>
+                            </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Comunicação</h2>
+                <div class="contact-content">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Seu email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required placeholder="Sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar mensagem</button>
+                    </form>
+                    <div class="social-links">
+                        <h3>Conecte-se conosco</h3>
+                        <div class="social-icons">
+                            <a href="https://www.tiktok.com/pt-BR/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> - Universidade Estadual de Maringá.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>   
