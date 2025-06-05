@@ -183,3 +183,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1500);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Alternar para Street View
+    const streetViewBtn = document.getElementById('abrirStreetView');
+    if (streetViewBtn) {
+      streetViewBtn.addEventListener('click', function() {
+        const iframe = document.querySelector('.mapa-container iframe');
+        const currentSrc = iframe.src;
+        
+        if (currentSrc.includes('!1m18')) {
+          // Se estiver no modo mapa, muda para Street View
+          iframe.src = currentSrc.replace('!1m18', '!1m12!4v1!5m2!1m18!2m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!3m2!1d-23.5657344!2d-46.6534266!4v1');
+          this.innerHTML = '<i class="fas fa-map"></i> Voltar para Mapa';
+        } else {
+          // Se estiver no modo Street View, volta para mapa
+          iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658440669!3d-23.565734367638794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1623866506934!5m2!1spt-BR!2sbr';
+          this.innerHTML = '<i class="fas fa-street-view"></i> Visualização 360°';
+        }
+      });
+    }
+    
+    // Link para abrir no app do Google Maps
+    const linksRota = document.querySelectorAll('[href*="maps.google"]');
+    linksRota.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          e.preventDefault();
+          const address = encodeURIComponent(this.getAttribute('href').split('?q=')[1]);
+          window.open(`google.navigation:q=${address}`, '_blank');
+        }
+      });
+    });
+  });
